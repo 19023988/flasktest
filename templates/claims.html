@@ -1,0 +1,47 @@
+<html>
+    
+<body>
+
+    
+
+    <table> 
+        <thead> 
+        <tr> 
+            
+            <th>claim title</th>
+            <th>claim Subject</th>
+            <th>claim date</th>
+        </tr> 
+        </thead> 
+        <tbody> 
+            
+            {% for row in valueClaim %}  
+            {% if row[0] and row[1] == topicID %}
+                <tr> 
+                   
+                    <td>{{row[2]}}  </td>
+                    <td>{{row[3]}}  </td> 
+                    <td>{{row[4]}}  </td>
+                </tr> 
+                {% endif %}
+            {% endfor %} 
+
+
+            
+        </tbody> 
+    </table> 
+    <a href="/add-claim/{{topicID}}">Add a claim</a>
+
+    
+    
+     <p>is topic ID is: {{topicID}}</p>
+    
+     
+    
+        
+        
+    
+
+    
+</body>
+</html>

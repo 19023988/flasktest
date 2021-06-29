@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>HB Forums</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static',filename='stylesheet.css') }}">
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+
+
+
+
+
+
+</script>
+
+</head>
+<body>
+
+
+
+<div class="upper">
+ <h1>Login or Sign up</h1>
+ <p>Please either login or sign up with an account to access the forum.</p>
+</div>
+<div class="float">
+    <div class="wrapper">
+        <h2>Signup</h2>
+        <form action="" method="POST" name="signup">
+            <div class="row">
+                <label for='firstName'>First Name</label>
+            </div>
+
+            <div class="row">
+                <input type="text" name="firstName" placeholder="First Name goes here..."required>
+            </div>    
+
+            <div class="row">
+                <label for='lastName'>Last Name</label>
+            </div>
+
+            <div class="row">
+                <input type="text" name="lastName" placeholder="Last Name goes here...">
+            </div>     
+
+            <div class="row">
+                <label for='email'>Email</label>
+            </div>
+
+            <div class="row">
+                <input type="text" name="email" placeholder="Email goes here..." required>
+            </div>   
+
+            <div class="row">
+                <label for='password'>Password</label>
+            </div>
+
+            <div class="row">
+                <input type="password" name="password" placeholder="Password goes here..." required>
+            </div>   
+            
+            <input type="checkbox" value="checkbox">
+            <label for="checkbox"> Accept T&C </label>
+            
+            <div class="row">
+                <input type="submit" value="submit">
+            </div>  
+
+        </form>
+    </div>
+
+    <div id="wrapper2">
+        <h2>Login</h2>
+        <form action="/login" method="POST" name="login">
+            <div class="row2">
+                <label for='email'>Email</label>
+            </div>
+
+            <div class="row2">
+                <input type="text" name="logEmail" placeholder="Email goes here..." required>
+            </div>   
+
+            <div class="row2">
+                <label for='password'>Password</label>
+            </div>
+
+            <div class="row2">
+                <input type="password" name="logPassword" placeholder="Password goes here..." required>
+            </div>   
+            
+            <div class="row2">
+                <input type="submit" value="submit">
+            </div>  
+
+        </form>
+    </div>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <table> 
+            <thead> 
+            <tr> 
+                
+                <th>claim title</th>
+                <th>claim Subject</th>
+                <th>claim date</th>
+            </tr> 
+            </thead> 
+            <tbody> 
+                
+                {% for row in data %}  
+                
+                    <tr> 
+                        <td>{{row[0]}}  </td>
+                        <td>{{row[1]}}  </td>
+                        <td>{{row[2]}}  </td>
+                        <td>{{row[3]}}  </td> 
+                        <td>{{row[4]}}  </td>
+                        <td>{{row[5]}}  </td>
+                    </tr> 
+                
+                {% endfor %} 
+    
+                <p>{{data}}</p>
+                
+            </tbody> 
+        </table> 
+    </body>
+</html>

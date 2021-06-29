@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Account Information</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+</style>
+<script src=""></script>
+<body>
+    <h1>account Information</h1>
+
+    <form action="/edit-profile" method="POST">
+        <div class="row2">
+            <label for='edit-firstname'>firstname</label>
+        </div>
+
+        <div class="row2">
+            <input type="text" name="edit-firstname" placeholder={{session.firstName}}>
+        </div>  
+        
+        <div class="row2">
+            <label for='edit-lastname'>lastName</label>
+        </div>
+
+        <div class="row2">
+            <input type="text" name="edit-lastname" placeholder={{session.lastName}}>
+        </div>  
+
+        <div class="row2">
+            <label for='edit-email'>email</label>
+        </div>
+
+        <div class="row2">
+            <input type="text" name="edit-email" placeholder={{session.email}}>
+        </div>  
+
+        <div class="row2">
+            <label for='edit-password'>password</label>
+        </div>
+
+        <div class="row2">
+            <input type="password" name="edit-password" placeholder={{session.password}}>
+        </div>  
+
+        <input type="submit" value="Change">
+
+    </form>
+
+    <p>{{session.id}}</p>
+
+
+
+
+</body>
+</html>

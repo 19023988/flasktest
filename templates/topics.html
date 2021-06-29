@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static',filename='topicStyle.css') }}">
+<style>
+</style>
+<script src=""></script>
+<body>
+
+    
+    <div class="nav">
+    <ul>
+        <li><a href="/edit-profile">account page</a></li>
+        <li><a href="/submit-topic">add a topic</a></li>
+        
+        <li id="myBtn"><button id="myBtn">Open</button></li>
+        <li><a href="/logout">Logout</a></li>
+        
+      </ul>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="/home" method="POST" name="signup">
+                <div class="row">
+                    <label for='firstName'>First Name</label>
+                </div>
+
+                <div class="row">
+                    <input type="text" name="firstName" placeholder="First Name goes here..."required>
+                </div>    
+
+                <div class="row">
+                    <label for='lastName'>Last Name</label>
+                </div>
+
+                <div class="row">
+                    <input type="text" name="lastName" placeholder="Last Name goes here...">
+                </div>     
+
+                <div class="row">
+                    <label for='email'>Email</label>
+                </div>
+
+                <div class="row">
+                    <input type="text" name="email" placeholder="Email goes here..." required>
+                </div>   
+
+                <div class="row">
+                    <label for='password'>Password</label>
+                </div>
+
+                <div class="row">
+                    <input type="password" name="password" placeholder="Password goes here..." required>
+                </div> 
+                
+                <p>Is this user admin</p>
+                <input type="radio" name="yes" value="1">
+                <label for="male">yes</label><br>
+                <input type="radio" name="no" value="0">
+                <label for="female">no</label><br>
+                
+                <input type="checkbox" value="checkbox">
+                <label for="checkbox"> Accept T&C </label>
+                
+                <div class="row">
+                    <input type="submit" value="submit">
+                </div>  
+
+            </form>
+
+            <form action="/login" method="POST" name="login">
+            <div class="row2">
+                <label for='email'>Email</label>
+            </div>
+
+            <div class="row2">
+                <input type="text" name="logEmail" placeholder="Email goes here..." required>
+            </div>   
+
+            <div class="row2">
+                <label for='password'>Password</label>
+            </div>
+
+            <div class="row2">
+                <input type="password" name="logPassword" placeholder="Password goes here..." required>
+            </div>   
+            
+            <div class="row2">
+                <input type="submit" value="submit">
+            </div>  
+
+        </form>
+        </div>
+    </div>
+    <div class="container">
+        {% for row in value %} 
+        <a href='/claims/{{row[0]}}'><ul><li> 
+            <div class="bottom">{{row[1]}}</div> 
+            <div class="subject">{{row[2]}}</div>
+            
+        
+        </li></ul></a>
+       
+
+        {% endfor %} 
+    
+    </div>
+
+    {{tID}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+        $(".subject").click(function(){
+            $(".container").fadeOut();
+                $(".subject").fadeOut("slow");
+                    $(".subject").fadeOut(1000);
+        });
+        });
+
+        
+        var modal = document.getElementById("myModal");
+    
+        var btn = document.getElementById("myBtn");
+        
+        var span = document.getElementsByClassName("close")[0];
+    
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+
+
+
+
+</body>
+</html>
+
+
